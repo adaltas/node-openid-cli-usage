@@ -15,6 +15,10 @@
     "qs": "^6.9.4"
   },
   "scripts": {
+    "postversion": "git push && git push --tags && npm publish",
+    "patch": "npm version patch -m 'Bump to version %s'",
+    "minor": "npm version minor -m 'Bump to version %s'",
+    "major": "npm version major -m 'Bump to version %s'",
     "build": "coffee -b -o lib src"
   }
 }
