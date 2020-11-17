@@ -1,6 +1,6 @@
 {
   "name": "openid-cli-usage",
-  "version": "0.0.0",
+  "version": "0.0.1",
   "description": "OAuth2 and OpenID Connect CLI example usage with the authorization code flow",
   "main": "lib/index.js",
   "repository": "https://github.com/adaltas/node-openid-cli-usage.git",
