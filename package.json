@@ -2,10 +2,13 @@
   "name": "openid-cli-usage",
   "version": "0.0.2",
   "description": "OAuth2 and OpenID Connect CLI example usage with the authorization code flow",
-  "main": "lib/index.js",
+  "main": "index.js",
   "repository": "https://github.com/adaltas/node-openid-cli-usage.git",
   "author": "David Worms <david@adaltas.com> (https://www.adaltas.com)",
   "license": "MIT",
+  "bin": {
+    "openid-cli-usage": "./bin/openid-cli-usage.js"
+  },
   "dependencies": {
     "axios": "^0.21.0",
     "coffeescript": "^2.5.1",
@@ -18,7 +21,6 @@
     "postversion": "git push && git push --tags && npm publish",
     "patch": "npm version patch -m 'Bump to version %s'",
     "minor": "npm version minor -m 'Bump to version %s'",
-    "major": "npm version major -m 'Bump to version %s'",
-    "build": "coffee -b -o lib src"
+    "major": "npm version major -m 'Bump to version %s'"
   }
 }
