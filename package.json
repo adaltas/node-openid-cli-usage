@@ -7,7 +7,7 @@
   "author": "David Worms <david@adaltas.com> (https://www.adaltas.com)",
   "license": "MIT",
   "bin": {
-    "openid-cli-usage": "./bin/openid-cli-usage.js"
+    "openid-cli-usage": "./bin/openid-cli-usage"
   },
   "dependencies": {
     "axios": "^0.21.0",
