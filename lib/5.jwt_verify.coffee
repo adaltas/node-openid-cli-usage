@@ -3,11 +3,11 @@
 
 Command:
 
-coffee bin/5.jwt_verify.coffee \
+coffee lib/5.jwt_verify.coffee \
   --token eyJhbGciOiJSUzI1NiIsImtpZCI6IjgzYmI1ZTEyYmRlOTk3MWQ2ODgzMjU0MDA1NWI5ZjViN2NkZmIyYjYifQ.eyJpc3MiOiJodHRwOi8vMTI3LjAuMC4xOjU1NTYvZGV4Iiwic3ViIjoiQ2dVME5qZzVOaElHWjJsMGFIVmkiLCJhdWQiOiJ3ZWJ0ZWNoLWF1dGgiLCJleHAiOjE2MDU2ODk4NDMsImlhdCI6MTYwNTYwMzQ0MywiYXRfaGFzaCI6IkNvcG92X01aOEo2Wmk2c0NwRTlPaHciLCJlbWFpbCI6ImRhdmlkQGFkYWx0YXMuY29tIiwiZW1haWxfdmVyaWZpZWQiOnRydWV9.A5Mz37rKLw8PbdB_9DJ6YGqEydvTe53a1Z8TMaNWUoaYz9tgFiQW_6gIJBX8ivmqoFVS-9ydbaTTomr64ZL6LtFtSl50jigJ5nBxpZv4_SXkCF0EphjoOmAvTX5HhCep_ig0QGwUamKGVzo5EeSqEK9jpH3nb2Hlt9AKjn4aShsWdrwiHz2FLHFdLlUfzSG113yDCvyoTP7JWONanSveLhDvEY3zlAlwY9auDVZqnnJsRatGbzWu1-gpAM9bZD6DgzMLnYyIaLH1yHtSgXOd748rTk4vOcvHRitSew_oZoVpcX17V0D2Fmk87tMKMnEgKARdcv5MKPH5YWpsZIkNbQ \
   --jwks_uri http://127.0.0.1:5556/dex/keys
 
-Print on success:
+Prints on success:
 
 {
   "iss": "http://127.0.0.1:5556/dex",
@@ -20,7 +20,7 @@ Print on success:
   "email_verified": true
 }
 
-Print on error:
+Prints on error:
 
 invalid signature
 
@@ -36,9 +36,9 @@ app =
   description: 'OAuth2 and OIDC usage - step 5 - JWT verify'
   options:
     jwks_uri:
-      description: 'Keys endpoint', required: true
+      description: 'Keys endpoint storing JSON Web Keys (JWK).', required: true
     token:
-      description: 'JWT token', required: true
+      description: 'JWT token.', required: true
   handler: ({
     params: { jwks_uri, token }
     stdout
