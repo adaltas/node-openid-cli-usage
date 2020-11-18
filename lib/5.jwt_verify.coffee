@@ -31,21 +31,6 @@ invalid signature
 jwt = require 'jsonwebtoken'
 jwksClient = require 'jwks-rsa'
 
-verify = (token, jwks_uri) ->
-  new Promise (resolve, reject) ->
-    # Retrieve the OAuth keys
-    getKey = (header, callback) ->
-      jwksClient
-        jwksUri: "#{jwks_uri}"
-      .getSigningKey header.kid, (err, key) ->
-        signingKey = key.publicKey or key.rsaPublicKey
-        callback null, signingKey
-    # Verify
-    jwt.verify token, getKey, (err, payload) ->
-      if err
-      then reject err
-      else resolve payload
-
 app =
   name: 'jwt_verify'
   description: 'OAuth2 and OIDC usage - step 5 - JWT verify'
@@ -60,8 +45,13 @@ app =
     stderr
   }) ->
     try
-      # Verify
-      payload = await verify token, jwks_uri
+      # Token verification with the JWKs from the OAuth server
+      header = JSON.parse Buffer.from(token.split('.')[0], 'base64').toString('utf-8')
+      {publicKey, rsaPublicKey} = await jwksClient
+        jwksUri: "#{jwks_uri}"
+      .getSigningKeyAsync header.kid
+      key = publicKey or rsaPublicKey
+      payload = jwt.verify token, key
       stdout.write JSON.stringify payload, null, 2
       stdout.write '\n\n'
     catch err
