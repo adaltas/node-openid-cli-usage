@@ -3,7 +3,7 @@
 
 Command:
 
-coffee lib/3.refresh_token.coffee \
+npx openid-cli-usage refresh_token \
   --client_id example-app \
   --client_secret ZXhhbXBsZS1hcHAtc2VjcmV0 \
   --token_endpoint http://127.0.0.1:5556/dex/token \
@@ -33,7 +33,7 @@ qs = require 'qs'
 
 app =
   name: 'refresh_token'
-  description: 'OAuth2 and OIDC usage - step 3 - refresh token grant'
+  description: 'OAuth2 and OIDC usage - step 3 - refresh token grant.'
   options:
     client_id:
       description: 'Client ID.', required: true

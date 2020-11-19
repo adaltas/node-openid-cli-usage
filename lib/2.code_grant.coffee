@@ -3,7 +3,7 @@
 
 Command:
 
-coffee lib/2.code_grant.coffee \
+npx openid-cli-usage code_grant \
   --client_id example-app \
   --client_secret ZXhhbXBsZS1hcHAtc2VjcmV0 \
   --token_endpoint http://127.0.0.1:5556/dex/token \
@@ -35,7 +35,7 @@ axios = require 'axios'
 
 app =
   name: 'code_grant'
-  description: 'OAuth2 and OIDC usage - step 2 - authorization code grant'
+  description: 'OAuth2 and OIDC usage - step 2 - authorization code grant.'
   options:
     client_id:
       description: 'Client ID.', required: true
