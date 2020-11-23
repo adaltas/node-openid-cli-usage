@@ -1,13 +1,13 @@
 {
   "name": "openid-cli-usage",
-  "version": "0.0.5",
+  "version": "0.0.6",
   "description": "OAuth2 and OpenID Connect CLI example usage with the authorization code flow",
   "main": "index.js",
   "repository": "https://github.com/adaltas/node-openid-cli-usage.git",
   "author": "David Worms <david@adaltas.com> (https://www.adaltas.com)",
   "license": "MIT",
   "bin": {
-    "openid-cli-usage": "./bin/openid-cli-usage"
+    "openid-cli-usage": "bin/openid-cli-usage"
   },
   "dependencies": {
     "axios": "^0.21.0",
