@@ -17,6 +17,21 @@
     "parameters": "^0.8.0",
     "qs": "^6.9.4"
   },
+  "devDependencies": {
+    "mocha": "^8.2.1",
+    "should": "^13.2.3"
+  },
+  "mocha": {
+    "throw-deprecation": true,
+    "require": [
+      "should",
+      "coffeescript/register"
+    ],
+    "inline-diffs": true,
+    "timeout": 40000,
+    "reporter": "spec",
+    "recursive": true
+  },
   "scripts": {
     "postversion": "git push && git push --tags && npm publish",
     "patch": "npm version patch -m 'Bump to version %s'",
