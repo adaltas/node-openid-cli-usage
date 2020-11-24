@@ -14,7 +14,7 @@
     "coffeescript": "^2.5.1",
     "jsonwebtoken": "^8.5.1",
     "jwks-rsa": "^1.11.0",
-    "parameters": "^0.8.0",
+    "parameters": "^0.8.1",
     "qs": "^6.9.4"
   },
   "devDependencies": {
