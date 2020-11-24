@@ -18,6 +18,7 @@
     "qs": "^6.9.4"
   },
   "devDependencies": {
+    "cz-conventional-changelog": "^3.3.0",
     "mocha": "^8.2.1",
     "should": "^13.2.3"
   },
